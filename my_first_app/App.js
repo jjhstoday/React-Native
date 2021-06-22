@@ -7,6 +7,7 @@
  */
 
 import React, {useState} from 'react';
+import PickerComponent from './src/picker';
 import {
   View,
   Text,
@@ -31,6 +32,7 @@ const App = () => {
 
   return (
     <View style={styles.mainView}>
+      <PickerComponent />
       <TextInput
         style={styles.input}
         value={myTextInput}
