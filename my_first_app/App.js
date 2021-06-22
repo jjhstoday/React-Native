@@ -33,7 +33,7 @@ const App = () => {
   return (
     <View style={styles.mainView}>
       <PickerComponent />
-      <TextInput
+      {/* <TextInput
         style={styles.input}
         value={myTextInput}
         onChangeText={onChangeInput}
@@ -49,7 +49,7 @@ const App = () => {
             {item}
           </Text>
         ))}
-      </ScrollView>
+      </ScrollView> */}
     </View>
   );
 };
