@@ -18,6 +18,7 @@ import {
   Image,
 } from 'react-native';
 import Dogs from './assets/images/dogs.jpg';
+import ModalComponent from './src/modal';
 
 const App = () => {
   const [myTextInput, setMyTextInput] = useState('dd');
@@ -34,12 +35,7 @@ const App = () => {
 
   return (
     <View style={styles.mainView}>
-      <Image
-        source={{uri: 'https://picsum.photos/seed/picsum/200/300'}}
-        style={styles.image}
-        resizeMode="contain"
-        onLoadEnd={() => alert('Image Loaded!!!')}
-      />
+      <ModalComponent />
     </View>
   );
 };
