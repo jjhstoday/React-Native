@@ -14,10 +14,16 @@ import NumList from './src/numlist';
 
 const App = () => {
   const [appName, setAppName] = useState('My First App');
-  const [random, setRemdom] = useState([36, 999]);
+  const [random, setRandom] = useState([36, 999]);
 
   const onAddRandomNum = () => {
-    alert('add random number');
+    const randomNum = Math.floor(Math.random() * 100) + 1;
+    setRandom(prev => [...prev, randomNum]);
+  };
+
+  const onNumDelete = position => {
+    const newArray = random.filter((_, i) => position !== i);
+    setRandom(newArray);
   };
 
   return (
@@ -29,7 +35,7 @@ const App = () => {
         </Text>
       </View>
       <Generator add={onAddRandomNum} />
-      <NumList num={random} />
+      <NumList num={random} delete={onNumDelete} />
     </View>
   );
 };
