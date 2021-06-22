@@ -15,7 +15,9 @@ import {
   ScrollView,
   Button,
   TextInput,
+  Image,
 } from 'react-native';
+import Dogs from './assets/images/dogs.jpg';
 
 const App = () => {
   const [myTextInput, setMyTextInput] = useState('dd');
@@ -32,24 +34,12 @@ const App = () => {
 
   return (
     <View style={styles.mainView}>
-      <PickerComponent />
-      {/* <TextInput
-        style={styles.input}
-        value={myTextInput}
-        onChangeText={onChangeInput}
-        multiline={true} // 개행 여부
-        maxLength={100} // 글자수 제한
-        autoCapitalize={'none'} // 대문자 자동 수정 -> 보통 로그인 이메일 입력시때 사용
-        editable={true} // === disable
+      <Image
+        source={{uri: 'https://picsum.photos/seed/picsum/200/300'}}
+        style={styles.image}
+        resizeMode="contain"
+        onLoadEnd={() => alert('Image Loaded!!!')}
       />
-      <Button title="Add Text Input" onPress={onAddTextInput} />
-      <ScrollView style={{width: '100%'}}>
-        {alphabet.map((item, idx) => (
-          <Text style={styles.mainText} key={idx}>
-            {item}
-          </Text>
-        ))}
-      </ScrollView> */}
     </View>
   );
 };
@@ -88,6 +78,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 25,
     padding: 10,
+  },
+  image: {
+    backgroundColor: 'orange',
+    width: '100%',
+    height: 700,
   },
 });
 
