@@ -16,6 +16,22 @@ const UserScreen = ({navigation, route}) => {
   const userName = params ? params.userName : null;
   const userLastName = params ? params.userLastName : null;
 
+  const headerStyle = () => {
+    navigation.setOptions({
+      title: 'Customizing',
+      headerStyle: {
+        backgroundColor: 'blue',
+      },
+      headerTintColor: 'yellow',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: 'green',
+      },
+    });
+  };
+
+  headerStyle();
+
   return (
     <View
       style={{

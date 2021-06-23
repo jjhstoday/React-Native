@@ -29,6 +29,18 @@ const HomeScreen = ({navigation}) => {
           }); // App.js > screen의 이름값
         }}
       />
+      <Button
+        title="Change the title"
+        onPress={() =>
+          navigation.setOptions({
+            title: 'Changed!!!',
+            headerStyle: {
+              backgroundColor: 'pink',
+            },
+            headerTintColor: 'red',
+          })
+        }
+      />
     </View>
   );
 };
