@@ -8,7 +8,7 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './src/home';
@@ -47,6 +47,13 @@ const App = () => {
           options={{
             title: 'Home Screen',
             headerTitle: <LogoTitle />,
+            headerRight: () => (
+              <Button
+                title="Info"
+                onPress={() => alert('I am a button!!!')}
+                color="orange"
+              />
+            ),
           }}
         />
         <Stack.Screen

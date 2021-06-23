@@ -28,6 +28,15 @@ const UserScreen = ({navigation, route}) => {
         color: 'green',
       },
       headerBackTitle: 'BACK',
+      headerRight: () => (
+        <Button
+          title="Go Back"
+          onPress={() => {
+            navigation.navigate('Home');
+          }}
+          color="orange"
+        />
+      ),
     });
   };
   headerStyle();
