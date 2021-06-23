@@ -29,8 +29,7 @@ const UserScreen = ({navigation, route}) => {
       },
     });
   };
-
-  headerStyle();
+  // headerStyle();
 
   return (
     <View
