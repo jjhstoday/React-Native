@@ -10,7 +10,12 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
-const UserScreen = ({navigation}) => {
+const UserScreen = ({navigation, route}) => {
+  const {params} = route;
+  const userIdx = params ? params.userIdx : null;
+  const userName = params ? params.userName : null;
+  const userLastName = params ? params.userLastName : null;
+
   return (
     <View
       style={{
@@ -25,6 +30,9 @@ const UserScreen = ({navigation}) => {
           navigation.navigate('Home'); // App.js > screen의 이름값
         }}
       />
+      <Text>User Idx: {JSON.stringify(userIdx)} </Text>
+      <Text>User Name: {JSON.stringify(userName)} </Text>
+      <Text>User LastName: {JSON.stringify(userLastName)} </Text>
     </View>
   );
 };

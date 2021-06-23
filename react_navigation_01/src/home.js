@@ -22,7 +22,11 @@ const HomeScreen = ({navigation}) => {
       <Button
         title="To User Screen"
         onPress={() => {
-          navigation.navigate('User'); // App.js > screen의 이름값
+          navigation.navigate('User', {
+            userIdx: 100,
+            userName: 'Gildong',
+            userLastName: 'Hong',
+          }); // App.js > screen의 이름값
         }}
       />
     </View>
