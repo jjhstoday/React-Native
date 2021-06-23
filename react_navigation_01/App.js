@@ -8,15 +8,25 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './src/home';
 import UserScreen from './src/user';
+import LogoTitle from './src/logo';
 
 const Stack = createStackNavigator();
 
 const App = () => {
+  // const LogoTitle = () => {
+  //   return (
+  //     <Image
+  //       style={{width: 40, height: 40}}
+  //       source={require('./src/assets/pics/home.png')}
+  //     />
+  //   );
+  // };
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -34,7 +44,10 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Home Screen'}}
+          options={{
+            title: 'Home Screen',
+            headerTitle: <LogoTitle />,
+          }}
         />
         <Stack.Screen
           name="User"

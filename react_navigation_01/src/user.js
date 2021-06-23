@@ -27,9 +27,10 @@ const UserScreen = ({navigation, route}) => {
         fontWeight: 'bold',
         color: 'green',
       },
+      headerBackTitle: 'BACK',
     });
   };
-  // headerStyle();
+  headerStyle();
 
   return (
     <View
