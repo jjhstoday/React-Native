@@ -29,10 +29,32 @@ import InfoTitle from './src/info_icon';
 import SlideDrawer from './src/my_drawer';
 import TabHomeScreen from './src/home_tab';
 import TabUserScreen from './src/assets/user_tab';
+import TabMessageScreen from './src/message_tab';
+import {Ionicons} from 'react-native-vector-icons/dist/Ionicons';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
+
+const TabBarIcon = (focused, name) => {
+  console.log('############################', Ionicons);
+  // let iconImagePath;
+  let iconName, iconSize;
+
+  if (name === 'Home') {
+    iconName = 'home-outline';
+    // iconImagePath = require('./src/assets/pics/home.png');
+  } else if (name === 'User') {
+    iconName = 'people-outline';
+    // iconImagePath = require('./src/assets/pics/user.png');
+  } else if (name === 'Message') {
+    iconName = 'mail-outline';
+    // iconImagePath = require('./src/assets/pics/message.png');
+  }
+  iconSize = focused ? 30 : 20;
+
+  return <Ionicons name={iconName} size={iconSize} />;
+};
 
 // const CustomDrawerContent = props => {
 //   return (
@@ -64,9 +86,24 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        initialRouteName="Home"
+        tabBarOptions={{
+          activeBackgroundColor: 'skyblue',
+          activeTintColor: 'blue',
+          inactiveTintColor: '#fff',
+          style: {
+            backgroundColor: '#c6cbef',
+          },
+          labelPosition: 'beside-icon',
+        }}
+        screenOptions={({route}) => ({
+          tabBarLabel: route.name,
+          tabBarIcon: ({focused}) => TabBarIcon(focused, route.name),
+        })}>
         <Tab.Screen name="Home" component={TabHomeScreen} />
         <Tab.Screen name="User" component={TabUserScreen} />
+        <Tab.Screen name="Message" component={TabMessageScreen} />
       </Tab.Navigator>
     </NavigationContainer>
 
