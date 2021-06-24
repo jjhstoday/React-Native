@@ -11,6 +11,7 @@ import React from 'react';
 import {StyleSheet, View, Text, Image, Button, Linking} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -26,9 +27,12 @@ import HelpTitle from './src/help_icon';
 import PictogramHome from './src/assets/pics/home.png';
 import InfoTitle from './src/info_icon';
 import SlideDrawer from './src/my_drawer';
+import TabHomeScreen from './src/home_tab';
+import TabUserScreen from './src/assets/user_tab';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
 // const CustomDrawerContent = props => {
 //   return (
@@ -60,31 +64,39 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName="Home"
-        drawerType="front"
-        drawerPosition="right"
-        drawerStyle={{
-          backgroundColor: '#c6cbef',
-          width: 200,
-        }}
-        drawerContentOptions={{
-          activeTintColor: '#8700ff',
-          activeBackgroundColor: 'skyblue',
-        }}
-        drawerContent={props => <SlideDrawer {...props} />}>
-        <Drawer.Screen
-          name="Home"
-          component={DrawerHomeScreen}
-          options={{
-            drawerIcon: () => (
-              <Image source={PictogramHome} style={{width: 40, height: 40}} />
-            ),
-          }}
-        />
-        <Drawer.Screen name="User" component={DrawerUserScreen} />
-      </Drawer.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={TabHomeScreen} />
+        <Tab.Screen name="User" component={TabUserScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
+
+    // <NavigationContainer>
+    //   <Drawer.Navigator
+    //     initialRouteName="Home"
+    //     drawerType="front"
+    //     drawerPosition="right"
+    //     drawerStyle={{
+    //       backgroundColor: '#c6cbef',
+    //       width: 200,
+    //     }}
+    //     drawerContentOptions={{
+    //       activeTintColor: '#8700ff',
+    //       activeBackgroundColor: 'skyblue',
+    //     }}
+    //     drawerContent={props => <SlideDrawer {...props} />}>
+    //     <Drawer.Screen
+    //       name="Home"
+    //       component={DrawerHomeScreen}
+    //       options={{
+    //         drawerIcon: () => (
+    //           <Image source={PictogramHome} style={{width: 40, height: 40}} />
+    //         ),
+    //       }}
+    //     />
+    //     <Drawer.Screen name="User" component={DrawerUserScreen} />
+    //   </Drawer.Navigator>
+    // </NavigationContainer>
+
     // <NavigationContainer>
     //   <Stack.Navigator
     //     initialRouteName="Home"
