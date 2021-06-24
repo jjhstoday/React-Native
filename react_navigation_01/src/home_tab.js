@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Button} from 'react-native';
 
 export default function TabHomeScreen({navigation}) {
   return (
@@ -11,6 +11,10 @@ export default function TabHomeScreen({navigation}) {
         justifyContent: 'center',
       }}>
       <Text>Home Screen</Text>
+      <Button
+        title="Go To Home Stack Screen"
+        onPress={() => navigation.navigate('Home_Stack')}
+      />
     </View>
   );
 }
