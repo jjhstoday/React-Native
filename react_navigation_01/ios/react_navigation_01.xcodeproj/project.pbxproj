@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* react_navigation_01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* react_navigation_01Tests.m */; };
 		46331539F89DCF59FE84E77C /* libPods-react_navigation_01-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2AEC994CA8F9C4422089E84 /* libPods-react_navigation_01-tvOS.a */; };
+		58FABA00268479450038AACA /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58FAB9FF268479450038AACA /* Ionicons.ttf */; };
 		818FD6898A04B3F8AAD9157B /* libPods-react_navigation_01.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D8EB5BF0824140CEEF7CE5 /* libPods-react_navigation_01.a */; };
 		D96655E78F449B088CD7BED9 /* libPods-react_navigation_01Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A5EE7FE8B0BDF7AEA5E471A /* libPods-react_navigation_01Tests.a */; };
 		F4FB7631609091CF486DCBF8 /* libPods-react_navigation_01-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2243CAE62E43500A6B3447 /* libPods-react_navigation_01-tvOSTests.a */; };
@@ -55,6 +56,7 @@
 		2D02E4901E0B4A5D006451C7 /* react_navigation_01-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "react_navigation_01-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1745F9E854B5005228547E /* Pods-react_navigation_01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react_navigation_01.debug.xcconfig"; path = "Target Support Files/Pods-react_navigation_01/Pods-react_navigation_01.debug.xcconfig"; sourceTree = "<group>"; };
 		4CABC73EA4591D67DC640AC7 /* Pods-react_navigation_01-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react_navigation_01-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-react_navigation_01-tvOS/Pods-react_navigation_01-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		58FAB9FF268479450038AACA /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		6A5EE7FE8B0BDF7AEA5E471A /* libPods-react_navigation_01Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-react_navigation_01Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		702BC670AF151A3D84EE24DC /* Pods-react_navigation_01-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react_navigation_01-tvOS.release.xcconfig"; path = "Target Support Files/Pods-react_navigation_01-tvOS/Pods-react_navigation_01-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		91D8EB5BF0824140CEEF7CE5 /* libPods-react_navigation_01.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-react_navigation_01.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 		13B07FAE1A68108700A75B9A /* react_navigation_01 */ = {
 			isa = PBXGroup;
 			children = (
+				58FAB9FE268477B50038AACA /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -149,6 +152,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		58FAB9FE268477B50038AACA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				58FAB9FF268479450038AACA /* Ionicons.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		8020C39A7F6C85BEDFB4F001 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +172,6 @@
 				E2AADCF77A6E48B6B22BA184 /* Pods-react_navigation_01Tests.debug.xcconfig */,
 				A0F7A4D47C62AB2AF530BE1F /* Pods-react_navigation_01Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +318,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -338,6 +349,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				58FABA00268479450038AACA /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
