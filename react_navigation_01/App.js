@@ -25,27 +25,28 @@ import LogoTitle from './src/logo_icon';
 import HelpTitle from './src/help_icon';
 import PictogramHome from './src/assets/pics/home.png';
 import InfoTitle from './src/info_icon';
+import SlideDrawer from './src/my_drawer';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const CustomDrawerContent = props => {
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem
-        label="Help"
-        onPress={() => Linking.openURL('http://www.google.com')}
-        icon={() => <HelpTitle />}
-      />
-      <DrawerItem
-        label="Info"
-        onPress={() => alert('Info Window')}
-        icon={() => <InfoTitle />}
-      />
-    </DrawerContentScrollView>
-  );
-};
+// const CustomDrawerContent = props => {
+//   return (
+//     <DrawerContentScrollView {...props}>
+//       <DrawerItemList {...props} />
+//       <DrawerItem
+//         label="Help"
+//         onPress={() => Linking.openURL('http://www.google.com')}
+//         icon={() => <HelpTitle />}
+//       />
+//       <DrawerItem
+//         label="Info"
+//         onPress={() => alert('Info Window')}
+//         icon={() => <InfoTitle />}
+//       />
+//     </DrawerContentScrollView>
+//   );
+// };
 
 const App = () => {
   // const LogoTitle = () => {
@@ -71,7 +72,7 @@ const App = () => {
           activeTintColor: '#8700ff',
           activeBackgroundColor: 'skyblue',
         }}
-        drawerContent={props => <CustomDrawerContent {...props} />}>
+        drawerContent={props => <SlideDrawer {...props} />}>
         <Drawer.Screen
           name="Home"
           component={DrawerHomeScreen}
