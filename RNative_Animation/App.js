@@ -7,19 +7,13 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import AnimOne from './src/Animation01';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
+      <AnimOne />
     </View>
   );
 };
