@@ -92,6 +92,29 @@ const App = () => {
     });
   };
 
+  const openForm = () => {
+    const newContact = {
+      emailAddress: [
+        {
+          label: 'work',
+          email: 'aaa@example.com',
+        },
+      ],
+      familyName: 'ccccc',
+      givenName: 'ddddd',
+      phoneNumbers: [
+        {
+          label: 'mobile',
+          number: '(010) 1111-1111',
+        },
+      ],
+    };
+
+    Contacts.openContactForm(newContact, err => {
+      if (err) console.warn(err);
+    });
+  };
+
   return (
     <View style={styles.container}>
       {myContacts.map((item, idx) => (
@@ -102,6 +125,7 @@ const App = () => {
       ))}
       <Button title="Load Contacts" onPress={() => getContacts()} />
       <Button title="Add Contacts" onPress={() => addContacts()} />
+      <Button title="Open Form" onPress={() => openForm()} />
     </View>
   );
 };
