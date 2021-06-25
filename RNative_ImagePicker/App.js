@@ -8,21 +8,29 @@
 
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, Image, Button} from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker/src';
 
 const App = () => {
   let [avatar, setAvatar] = useState('');
 
   const addImage = () => {
-    ImagePicker.launchCamera({}, response => {
-      setAvatar(response.uri);
-    });
+    ImagePicker.showImagePicker(
+      {
+        title: 'Choose your photo',
+        takePhotoButtonTitle: 'Take a pretty one',
+        chooseFromLibraryButtonTitle: 'Select an old one',
+        cancelButtonTitle: 'Just go back',
+      },
+      response => {
+        setAvatar(response.uri);
+      },
+    );
   };
 
   return (
     <View style={styles.container}>
       <Image source={{uri: avatar}} style={styles.avatar} />
-      <Button title="Add an Image" onPree={() => addImage()} />
+      <Button title="Add an Image" onPress={() => addImage()} />
     </View>
   );
 };
