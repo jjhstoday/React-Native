@@ -18,6 +18,8 @@ import {
 import Contacts from 'react-native-contacts';
 
 const App = () => {
+  const [myContacts, setMyContacts] = useState([]);
+
   const requestContactPermission = async () => {
     if (Platform.OS === 'ios') {
       console.warn('iOS');
@@ -50,7 +52,39 @@ const App = () => {
           if (err) {
             throw err;
           }
-          console.warn(contacts);
+          setMyContacts(contacts);
+        });
+      } else {
+        alert('no permission');
+      }
+    });
+  };
+
+  const addContacts = () => {
+    requestContactPermission().then(didGetPermission => {
+      if (didGetPermission) {
+        const newContact = {
+          emailAddress: [
+            {
+              label: 'work',
+              email: 'aaa@example.com',
+            },
+          ],
+          familyName: 'Go',
+          givenName: 'Gildong',
+          phoneNumbers: [
+            {
+              label: 'mobile',
+              number: '(010) 1111-1111',
+            },
+          ],
+        };
+
+        Contacts.addContact(newContact, err => {
+          if (err) {
+            throw err;
+          }
+          setMyContacts(prev => [...prev, newContact]);
         });
       } else {
         alert('no permission');
@@ -60,7 +94,14 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Load Contact" onPress={() => getContacts()} />
+      {myContacts.map((item, idx) => (
+        <Text key={idx}>
+          {item.givenName}
+          {item.familyName}
+        </Text>
+      ))}
+      <Button title="Load Contacts" onPress={() => getContacts()} />
+      <Button title="Add Contacts" onPress={() => addContacts()} />
     </View>
   );
 };
