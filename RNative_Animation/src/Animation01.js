@@ -12,25 +12,28 @@ import {Easing, Animated, StyleSheet, View, Button} from 'react-native';
 const AnimOne = () => {
   const [mySquare, setMySquare] = useState(() => new Animated.ValueXY(0, 0));
 
-  useEffect(() => {
+  const runAnimation = () => {
     Animated.timing(mySquare, {
       toValue: {x: 50, y: 300},
       duration: 2000,
       delay: 1500,
       easing: Easing.elastic(3),
     }).start();
-  }, []);
+  };
 
   return (
-    <Animated.View
-      style={mySquare.getLayout()}
-      // style={{
-      //   left: mySquare.x,
-      //   top: mySquare.y,
-      // }}
-    >
-      <View style={styles.square} />
-    </Animated.View>
+    <View>
+      <Animated.View
+        style={mySquare.getLayout()}
+        // style={{
+        //   left: mySquare.x,
+        //   top: mySquare.y,
+        // }}
+      >
+        <View style={styles.square} />
+      </Animated.View>
+      <Button title="Animation Start" onPress={runAnimation} />
+    </View>
   );
 };
 
