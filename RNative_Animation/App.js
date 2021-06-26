@@ -7,12 +7,21 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, View, Text} from 'react-native';
+import {Dimensions, Platform, StyleSheet, View, Text} from 'react-native';
 // import AnimOne from './src/Animation01';
 // import AnimTwo from './src/Animation02';
 import Supertext from './src/utils/supertext';
+import DeviceInfo from 'react-native-device-info';
 
 const App = () => {
+  const warnFontSize = () => {
+    if (Dimensions.get('window').fontScale === 1) {
+      console.warn('Good');
+    } else {
+      console.warn('Error!! The font scale must be 1');
+    }
+  };
+
   const checkSupport = () => {
     if (Platform.OS === 'ios') {
       if (Platform.Version < 13.4) {
@@ -26,7 +35,12 @@ const App = () => {
     return true;
   };
 
-  console.warn(Platform.Version);
+  // console.warn(Platform.Version);
+  // console.warn(Dimensions.get('screen'));
+  // console.warn(Dimensions.get('window'));
+  console.warn(DeviceInfo.getBrand());
+  console.warn(DeviceInfo.isTablet());
+
   return (
     <View style={styles.container}>
       {checkSupport() ? (
