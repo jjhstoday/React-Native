@@ -52,6 +52,7 @@ const AnimTwo = () => {
         <View style={styles.blueSquare} />
       </Animated.View>
       <Button title="Animation Start" onPress={runAnimation} />
+      <Button title="Check the console" onPress={() => console.log('hihihi')} />
     </View>
   );
 };
